@@ -1,0 +1,53 @@
+── 1. Error: (unknown) (@test-ds.names.R#35)  ──────────────────────────────────
+The input object(s) subclasses is(are) not defined on one or more of the studies!
+1: ds.names("subclasses") at testthat/test-ds.names.R:35
+2: isDefined(datasources, x)
+3: stop("The input object(s) ", paste(myObjects[idx], collapse = ", "), " is(are) not defined on one or more of the studies!",
+       call. = FALSE)
+
+── 2. Error: (unknown) (@test-ds.recodelevels.R#26)  ───────────────────────────
+The input object(s) bmi_new is(are) not defined on one or more of the studies!
+1: ds.levels(x = "bmi_new") at testthat/test-ds.recodelevels.R:26
+2: isDefined(datasources, varname)
+3: stop("The input object(s) ", paste(myObjects[idx], collapse = ", "), " is(are) not defined on one or more of the studies!",
+       call. = FALSE)
+
+── 3. Failure: subD_exists (@test-ds.subset.R#28)  ─────────────────────────────
+res$sim1 isn't true.
+
+── 4. Failure: subD_exists (@test-ds.subset.R#29)  ─────────────────────────────
+res$sim2 isn't true.
+
+── 5. Failure: subD_exists (@test-ds.subset.R#30)  ─────────────────────────────
+res$sim3 isn't true.
+
+── 6. Failure: subD3_exists (@test-ds.subset.R#46)  ────────────────────────────
+res$sim1 isn't true.
+
+── 7. Failure: subD3_exists (@test-ds.subset.R#47)  ────────────────────────────
+res$sim2 isn't true.
+
+── 8. Failure: subD3_exists (@test-ds.subset.R#48)  ────────────────────────────
+res$sim3 isn't true.
+
+── 9. Error: (unknown) (@test-ds.subset.R#53)  ─────────────────────────────────
+The input object(s) logHDL is(are) not defined on one or more of the studies!
+1: ds.subset(datasources = opals, subset = "subLAB_HDL", x = "logHDL", rows = c(1:50)) at testthat/test-ds.subset.R:53
+2: isDefined(datasources, x)
+3: stop("The input object(s) ", paste(myObjects[idx], collapse = ", "), " is(are) not defined on one or more of the studies!",
+       call. = FALSE)
+
+══ testthat results  ═══════════════════════════════════════════════════════════
+OK: 161 SKIPPED: 0 FAILED: 9
+1. Error: (unknown) (@test-ds.names.R#35)
+2. Error: (unknown) (@test-ds.recodelevels.R#26)
+3. Failure: subD_exists (@test-ds.subset.R#28)
+4. Failure: subD_exists (@test-ds.subset.R#29)
+5. Failure: subD_exists (@test-ds.subset.R#30)
+6. Failure: subD3_exists (@test-ds.subset.R#46)
+7. Failure: subD3_exists (@test-ds.subset.R#47)
+8. Failure: subD3_exists (@test-ds.subset.R#48)
+9. Error: (unknown) (@test-ds.subset.R#53)
+
+Error: testthat unit tests failed
+Execution halted

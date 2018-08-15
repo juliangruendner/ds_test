@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  ds_test:
+    container_name: ds_test
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - ./testdata:/testdata
+    tty: true
+networks:
+  default:
+    external:
+      name: datashield_docker_opal_net
