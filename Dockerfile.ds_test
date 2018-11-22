@@ -1,6 +1,7 @@
 FROM debian:latest
 
 ADD ./testdata /testdata
+ADD ./install_ds_test_data.sh /
 
 RUN apt-get update && \
 apt-get install -y python && \
