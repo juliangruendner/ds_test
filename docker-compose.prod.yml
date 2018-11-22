@@ -2,11 +2,7 @@ version: '3.2'
 services:
   ds_test:
     container_name: ds_test
-    build:
-      context: .
-      dockerfile: Dockerfile.ds_test
-    volumes:
-    - ./testdata:/testdata
+    image: ds_test
     tty: true
 networks:
   default:

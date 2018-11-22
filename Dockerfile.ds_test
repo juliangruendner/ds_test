@@ -1,5 +1,7 @@
 FROM debian:latest
 
+ADD ./testdata /testdata
+
 RUN apt-get update && \
 apt-get install -y python && \
 apt-get install -y gnupg && \
