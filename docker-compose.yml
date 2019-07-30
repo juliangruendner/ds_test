@@ -6,9 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile.ds_test
     volumes:
-    - ./testdata:/testdata
+      - ./testscript:/testscript
+    environment:
+      - QUEUE_HOST=${QUEUE_HOST}
     tty: true
 networks:
   default:
     external:
-      name: datashield_docker_opal_net
+      name: ds_opal_opal_net

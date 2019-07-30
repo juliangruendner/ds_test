@@ -1,8 +1,5 @@
 FROM debian:latest
 
-ADD ./testdata /testdata
-ADD ./install_ds_test_data.sh /
-
 RUN apt-get update && \
 apt-get install -y python && \
 apt-get install -y gnupg && \
@@ -21,3 +18,7 @@ RUN R -e 'install.packages("opal", repos="http://cran.obiba.org", type="source")
 RUN R -e 'install.packages("mime", repos="https://ftp.fau.de/cran/")'
 RUN R -e 'install.packages("opaladmin", repos="http://cran.obiba.org", type="source")'
 RUN R -e "install.packages('datashieldclient', repos=c('https://cran.uni-muenster.de/', 'http://cran.obiba.org'), dependencies=TRUE)"
+
+ADD ./testscript /testscript
+
+CMD bash -c 'cd /testscript && ./executeTest.sh'

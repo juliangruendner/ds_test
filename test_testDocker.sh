@@ -1,0 +1,1 @@
+docker run -a stdout -e "QUEUE_HOST=https://nginx_queue:443/queue" --rm --network=ds_opal_opal_net ds_test:latest
