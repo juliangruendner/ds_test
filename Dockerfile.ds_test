@@ -9,15 +9,24 @@ apt-get install -y apt-transport-https && \
 apt-get update && \
 apt-get install -y opal-python-client
 
+
+RUN apt install -y software-properties-common
+RUN apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
+RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian stretch-cran35/'
+RUN apt update
+RUN apt install -y r-base r-base-dev
+
 RUN apt-get install -y r-recommended && \
 apt-get install -y libcurl4-openssl-dev
+
 
 RUN R -e 'install.packages("rjson", repos="https://ftp.fau.de/cran/")'
 RUN R -e 'install.packages("RCurl", repos="https://ftp.fau.de/cran/")'
 RUN R -e 'install.packages("opal", repos="http://cran.obiba.org", type="source")'
 RUN R -e 'install.packages("mime", repos="https://ftp.fau.de/cran/")'
 RUN R -e 'install.packages("opaladmin", repos="http://cran.obiba.org", type="source")'
-RUN R -e "install.packages('datashieldclient', repos=c('https://cran.uni-muenster.de/', 'http://cran.obiba.org'), dependencies=TRUE)"
+RUN R -e "install.packages('fields', repos=c('https://cran.uni-muenster.de/', 'http://cran.obiba.org'), dependencies=TRUE)"
+RUN R -e "install.packages('dsBaseClient', repos=c('https://cran.uni-muenster.de/', 'http://cran.obiba.org'), dependencies=TRUE)"
 
 ADD ./testscript /testscript
 

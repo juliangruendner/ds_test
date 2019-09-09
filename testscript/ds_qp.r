@@ -2,9 +2,6 @@
 library(opal)
 library(opaladmin)
 library(dsBaseClient)
-library(dsStatsClient)
-library(dsGraphicsClient)
-library(dsModellingClient)
 
 # login details
 queueHost=Sys.getenv("QUEUE_HOST")
